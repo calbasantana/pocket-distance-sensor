@@ -96,9 +96,84 @@ This part is pretty straightforward. Put everything where it belongs so it is as
 
 I've attached the main.py file used for this. Simply download it to your computer and upload it to the Pico. My preferred way of doing this is through Thonny (https://thonny.org/).
 
+The code can also be directly copied from below:
+
+```bash
+from machine import Pin, I2C, PWM
+from ssd1306 import SSD1306_I2C
+from hcsr04 import HCSR04
+from time import sleep
+
+# Initialize I2C and SSD1306 display
+i2c = I2C(1, scl=Pin(27), sda=Pin(26))
+display = SSD1306_I2C(128, 64, i2c)
+
+# Initialize HC-SR04 sensor
+sensor = HCSR04(trigger_pin=2, echo_pin=3, echo_timeout_us=1000000)
+
+# Initialize passive buzzer
+buzzer = PWM(Pin(22))
+buzzer.duty_u16(0)  # Turn off the buzzer initially
+
+prev_distance = 0  # Variable to store the previous distance
+
+while True:
+    # Measure distance in centimeters
+    distance = sensor.distance_cm()
+
+    # Filter out distances above 400cm
+    if distance > 400:
+        continue
+
+    print('Distance:', distance, 'cm')
+
+    # Round the distance to two decimal places
+    distance_rounded = round(distance, 2)
+
+    # Clear display
+    display.fill(0)
+
+    # Show distance on the display
+    display.text("Distance:", 0, 0)
+    display.text(str(distance_rounded) + " cm", 0, 16)
+
+    # Check distance and display appropriate message
+    if distance < 15:
+        display.text("Too close!", 32, 32)  # Centered text
+        buzzer.freq(1500)  # Set buzzer frequency to 1500Hz
+        buzzer.duty_u16(50000)  # Maximum duty cycle for maximum loudness
+    elif 15 <= distance < 30:
+        display.text("Close enough", 26, 32)  # Centered text
+        buzzer.freq(1000)  # Set buzzer frequency to 1500Hz
+        buzzer.duty_u16(int((30 - distance) * 8738) + 32767)  # Increase duty cycle as distance decreases
+    elif distance >= 30:
+        display.text("Keep going", 26, 32)  # Centered text
+        buzzer.duty_u16(0)  # Turn off the buzzer
+
+    display.show()
+
+    # Stop the beep if the distance changes
+    if distance != prev_distance:
+        buzzer.duty_u16(0)  # Turn off the buzzer
+        prev_distance = distance
+
+    # Delay for a short period
+    sleep(.5)
+```
+
+Of course, you can edit this code however you like. I have it set to beep at those different distance because, as I mentioned before, when I was originally designing this, it was with the intention for it to be used with my older car.
+
 ## Running the Code
+
+I wanted to provide a quick video of this pocket distance sensor in use:
+
+
+https://github.com/user-attachments/assets/67f8aee9-af19-4441-ae75-e8cb7f0fee7f
+
 
 
 # Tips
- It can be hard to align the card precisely. For this reason, I recommend using some scotch tape on either both or one of the sides of the metal card. I didn’t have scotch tape readily available, so I carefully added some electrical tape.
- ![Image_4](https://github.com/user-attachments/assets/9e7eda4a-26a8-4de4-a63d-540204487ea2)
+
+The sensor may sometimes give readings that are way off. This is because of how sound-based sensors work. Essentially, one part of the sensor sends out a sound wave, which bounces back and is then incident on the other part of the sensor. Since the speed of sound in air is well-known, this value, alongside the time in between sending the sound wave and receiving it, is used to determine distance between sensor and source. This does pose issues if the source of the sound moves (so if you move your hand too much while holding the sensor) or if the angle is tilted from the survey or if the target surface has grooves that diffuse sound waves in an odd pattern. These are all things to keep in mind and a good reason for why people often opt for light-based distance sensors instead.
+
+I believe the sensor I used here is rated for about 2 meters of accuracy, but realistically, I wouldn't put it past 1 meter here.

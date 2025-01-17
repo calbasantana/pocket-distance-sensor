@@ -46,6 +46,23 @@ Below you can find the printer and material used.
   Supports: Everywhere \
   Estimated Printing Time: 8 hours and 1 minutes
 
+## Custom PCB
+
+I decided to create a custom PCB for the pico, screen connections, and other hardware pieces to be more compact. I did this using EasyEDA.
+
+Below you can see the schematics on EasyEDA:
+
+![Image_4](https://github.com/user-attachments/assets/9733ae1c-5c18-4559-8de0-73418a19801d)
+
+
+And here you can see the PCB layout:
+
+![Image_5](https://github.com/user-attachments/assets/25529ad7-e7d0-4480-bde3-a1f5ee49c3ab)
+
+
+For convenience, I've attached the .gerber file, which can be uploaded at this website for purchase:
+
+Overall, it is very cheap to make a PCB, so I find myself doing large batches - the biggest pain is the shipping.
 # Material(s)
 Lithophanes require a light source in order to work properly, so the following materials were purchased for this build.
 

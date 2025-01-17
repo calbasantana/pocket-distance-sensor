@@ -39,12 +39,12 @@ Below you can find the printer and material used.
 
 #### Software
  PrusaSlicer
-![Image_2](https://github.com/user-attachments/assets/a380fe96-3902-44ff-9e6b-a31b57fddf16)
+![Image_3](https://github.com/user-attachments/assets/6ec19aa6-54d0-4b70-953f-ffbe2785eb5d)
 ##### Settings
   Layer Height: .2mm \
-  Infill: 50% \
+  Infill: 30% \
   Supports: Everywhere \
-  Estimated Printing Time: 3 hour and 26 minutes - this will vary depending on your image
+  Estimated Printing Time: 8 hours and 1 minutes
 
 # Material(s)
 Lithophanes require a light source in order to work properly, so the following materials were purchased for this build.

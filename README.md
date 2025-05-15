@@ -76,7 +76,7 @@ The following materials were purchased for this project, but it's cheaper if you
 ![Image_8](https://github.com/user-attachments/assets/ea677c11-c87d-479b-b6b8-df4ed9fbe452)
 
 
-Pimoroni Pico LiPo - this can be purchased for $11 at the following link: https://shop.pimoroni.com/products/pimoroni-pico-lipo?variant=39386149093459
+* [Pimoroni Pico LiPo ($11)](https://shop.pimoroni.com/products/pimoroni-pico-lipo?variant=39386149093459)
 
 * [3.7V 2500mAh Lipo Rechargeable Battery ($12)](https://www.amazon.com/YDL-2500mAh-battery-Rechargeable-Connector/dp/B07BTY599F/ref=sr_1_6?crid=2MP6R0GVM0Z1X&dib=eyJ2IjoiMSJ9.eagHhmMYsNsXb4xTJqQhajqqiTY8HyAxv5sBif7eHYR2EXrTL7SSFRvd5PNjWNaVyJmzNTuUod0JPd8w8yLVc3SrJcPi9TvKd11-3c_j4ZHBNvwrVySVHUJhoOR6gThnBm6gPWH2s33cIlO8abkns-sfcGShELU1rvegu8zIXrD-oXPiJ-a5aofMkRNFRP8fWL2IBkuwWXMFQsAKAZEiPghzKmeeS4mdYYeuzcunIM_zilsTYNt5C0Ke8qeG2tHVUzxn1a9HcCkeruu2aHBPqwEJJTIHTxfqtFQY1vKHB1dxHg7vFyX9RkcPvLooAkJ0-MQb5dKP482scF1XVmp2vizqcmlWD_l3TDE_qZxIJ-7eRo3wO0UP8lrIrSwq58syla-Xo3LYmAt50cWyqg15L3lddG9_aFlywSQp3wLT2_wXo5IJSEeX2IBsz9LBuZFH.VV-Ia3l9Aglag64ZcM0YLwoB4Tzmzdk60nEi1n5GLzg&dib_tag=se&keywords=3.7v+2500mah&qid=1737074753&sprefix=3.7v+2500mah%2Caps%2C111&sr=8-6
 )
